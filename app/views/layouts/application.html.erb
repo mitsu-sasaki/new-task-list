@@ -19,7 +19,12 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-
+    
+    <% if logged_in? %>
+      <p>ログインしているとでるメッセージ　ユーザ名　⇒: <%= current_user.name %></p>
+    <% else %>
+    　<p>ログインしていないとでるメッセージ</p>
+    <% end %>
     
     <div class="container">
       <%= render 'layouts/flash_messages' %>
